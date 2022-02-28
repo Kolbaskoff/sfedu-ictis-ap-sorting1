@@ -98,7 +98,9 @@ int *generateTestArray(int size) {
 
 //TODO implement a function to cleanup file before saving data there.
 void cleanupFile(const char *fileName) {
-	(std::ofstream( fileName ) << "" ).close( ) ;
+	std::ofstream f( fileName ) ;
+	f << "" ;
+	f.close( ) ;
 
 	return ;
 }
