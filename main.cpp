@@ -191,7 +191,6 @@ namespace QuickSortNS {
 	return 0 ;
     }
 
-    //TODO Implement function quick sort function based on https://en.wikipedia.org/wiki/Quicksort
     void quicksort(int *arr, int low, int high) {
     	partitioning( arr , low , high ) ;
     }
