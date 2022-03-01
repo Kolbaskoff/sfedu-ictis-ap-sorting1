@@ -91,7 +91,7 @@ int *generateTestArray(int size) {
 	srand( time( NULL ) ) ;
 
 	for( ; iter != res + size ; ++iter )
-		*iter = rand( ) % 412 ;
+		*iter = rand( ) % 10240 ;
 
 	return res ;
 }
@@ -99,7 +99,7 @@ int *generateTestArray(int size) {
 //TODO implement a function to cleanup file before saving data there.
 void cleanupFile(const char *fileName) {
 	std::ofstream f( fileName ) ;
-	f << "" ;
+	f.flush( ) ;
 	f.close( ) ;
 
 	return ;
@@ -108,7 +108,7 @@ void cleanupFile(const char *fileName) {
 //TODO add timing about alg execution time to corresponding file based on fileName
 void saveExecutionTimeToFile(const char *fileName, int arrSize, unsigned long timeMS) {
 	std::ofstream fout( fileName , ios_base::app ) ;
-	fout << arrSize << ',' << arrSize << '\n' ;
+	fout << arrSize << ',' << timeMS << '\n' ;
 	fout.close( ) ;
 }
 
