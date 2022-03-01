@@ -27,7 +27,7 @@ int CHECK_ARRAY[] = {1, 2, 3, 7, 8, 11, 11, 11, 12, 13, 14, 18, 18, 19, 19, 19, 
                      193, 193, 193, 195, 195, 196, 196, 198, 199};
 const int TEST_ARRAY_SIZE = 200;
 
-int TEST_SERIES_SIZE[] = {10, 100, 500, 1000, 5000, 10000, 50000};
+int TEST_SERIES_SIZE[] = {10, 100, 500, 1000, 5000, 10000, 50000, 100000};
 int TEST_SERIES_NUM = sizeof( TEST_SERIES_SIZE )/sizeof( int );
 
 #endif //SFEDU_ICTIS_AP_SORTING_TEST_H
