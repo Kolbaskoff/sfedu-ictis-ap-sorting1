@@ -171,8 +171,6 @@ namespace QuickSortNS {
     int partitioning(int *arr, int lo, int hi) {
     	int	lower	,
 		pivot	;
-	if( hi - lo < 1 )
-		return 0 ;
 
 	for( lower = lo , pivot = hi ; lower < pivot ; )
 		if( arr[ lower ] < arr[ pivot ] )
@@ -185,14 +183,19 @@ namespace QuickSortNS {
 			--pivot ;
 		}
 
-	partitioning( arr , lo , pivot - 1 ) ;
-	partitioning( arr , pivot + 1 , hi ) ;
-
-	return 0 ;
+	return pivot ;
     }
 
     void quicksort(int *arr, int low, int high) {
-    	partitioning( arr , low , high ) ;
+		int pivot ;
+		
+		if( high - low < 1 )
+			return ;
+		
+    	pivot = partitioning( arr , low , high ) ;
+		
+		quicksort( arr , low , pivot - 1 ) ;
+		quicksort( arr , pivot + 1 , high ) ;
     }
 }
 
